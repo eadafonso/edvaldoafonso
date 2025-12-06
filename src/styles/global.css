@@ -1,0 +1,219 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Design System - Custom Properties */
+:root {
+  /* Light Mode Colors */
+  --color-bg-light: #ffffff;
+  --color-text-light: #1a1a1a;
+  --color-text-muted-light: #666666;
+  --color-accent-light: #2563eb;
+  --color-accent-hover-light: #1d4ed8;
+  --color-link-light: #374151;
+  --color-link-hover-light: #1a1a1a;
+  --color-code-bg-light: #f3f4f6;
+  --color-code-text-light: #1e40af;
+  --color-pre-bg-light: #f9fafb;
+  --color-pre-border-light: #e5e7eb;
+  
+  /* Dark Mode Colors */
+  --color-bg-dark: #1a1a1a;
+  --color-text-dark: #f5f5f5;
+  --color-text-muted-dark: #ccc;
+  --color-accent-dark: #60a5fa;
+  --color-accent-hover-dark: #93c5fd;
+  --color-link-dark: #d1d5db;
+  --color-link-hover-dark: #ffffff;
+  --color-code-bg-dark: #1a1a1a;
+  --color-code-text-dark: #60a5fa;
+  --color-pre-bg-dark: #1a1a1a;
+  --color-pre-border-dark: #2a2a2a;
+  
+  /* Default to Dark Mode */
+  --color-bg: var(--color-bg-dark);
+  --color-text: var(--color-text-dark);
+  --color-text-muted: var(--color-text-muted-dark);
+  --color-accent: var(--color-accent-dark);
+  --color-accent-hover: var(--color-accent-hover-dark);
+  --color-link: var(--color-link-dark);
+  --color-link-hover: var(--color-link-hover-dark);
+  --color-code-bg: var(--color-code-bg-dark);
+  --color-code-text: var(--color-code-text-dark);
+  --color-pre-bg: var(--color-pre-bg-dark);
+  --color-pre-border: var(--color-pre-border-dark);
+  
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  
+  /* Typography */
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.5rem;
+  --line-height-base: 1.7;
+  --line-height-tight: 1.3;
+  
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+}
+
+/* Light Mode */
+[data-theme="light"] {
+  --color-bg: var(--color-bg-light);
+  --color-text: var(--color-text-light);
+  --color-text-muted: var(--color-text-muted-light);
+  --color-accent: var(--color-accent-light);
+  --color-accent-hover: var(--color-accent-hover-light);
+  --color-link: var(--color-link-light);
+  --color-link-hover: var(--color-link-hover-light);
+  --color-code-bg: var(--color-code-bg-light);
+  --color-code-text: var(--color-code-text-light);
+  --color-pre-bg: var(--color-pre-bg-light);
+  --color-pre-border: var(--color-pre-border-light);
+}
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color var(--transition-base), color var(--transition-base);
+}
+
+/* Typography */
+h1 {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  line-height: var(--line-height-tight);
+  margin-bottom: var(--space-md);
+}
+
+p {
+  margin-bottom: var(--space-md);
+  color: var(--color-text-muted);
+}
+
+/* Links */
+a {
+  color: var(--color-link);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  position: relative;
+  border-bottom: 1px solid transparent;
+}
+
+a:hover {
+  color: var(--color-link-hover);
+  border-bottom-color: var(--color-link-hover);
+}
+
+a.accent {
+  color: var(--color-accent);
+  border-bottom-color: transparent;
+}
+
+a.accent:hover {
+  color: var(--color-accent-hover);
+  border-bottom-color: var(--color-accent-hover);
+}
+
+/* Lists */
+ul {
+  list-style: none;
+  padding-left: 1.5em;
+}
+
+ul li {
+  margin-bottom: var(--space-xs);
+  position: relative;
+}
+
+ul li::before {
+  content: "•";
+  color: var(--color-text-muted);
+  position: absolute;
+  left: -1.5em;
+  font-weight: 600;
+}
+
+ul li a {
+  text-decoration: underline;
+  text-decoration-color: var(--color-text-muted);
+  text-underline-offset: 3px;
+}
+
+ul li a:hover {
+  text-decoration-color: var(--color-link-hover);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease forwards;
+}
+
+/* Layout */
+.container {
+  max-width: 650px;
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-md);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Sections */
+.section {
+  margin-bottom: var(--space-lg);
+}
+
+.section:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive Typography */
+@media (min-width: 640px) {
+  :root {
+    --font-size-base: 1.0625rem;
+    --font-size-lg: 1.1875rem;
+    --font-size-xl: 1.625rem;
+  }
+  
+  .container {
+    padding: var(--space-xl) var(--space-lg);
+  }
+}
+
+@media (min-width: 768px) {
+  :root {
+    --font-size-base: 1.125rem;
+    --font-size-lg: 1.25rem;
+    --font-size-xl: 1.75rem;
+  }
+}
+

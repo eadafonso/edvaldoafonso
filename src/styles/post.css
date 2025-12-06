@@ -1,0 +1,90 @@
+
+/* MDX Post Content Styles */
+.post-content h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-md);
+  color: var(--color-text);
+}
+
+.post-content h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-sm);
+  color: var(--color-text);
+}
+
+.post-content h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-sm);
+  color: var(--color-text);
+}
+
+.post-content p {
+  margin-bottom: var(--space-md);
+  color: var(--color-text-muted);
+}
+
+.post-content ul,
+.post-content ol {
+  margin-bottom: var(--space-md);
+  padding-left: 2em;
+}
+
+.post-content ol {
+  list-style: decimal;
+}
+
+.post-content ol li {
+  padding-left: 0.5em;
+}
+
+.post-content ol li::before {
+  display: none;
+}
+
+.post-content li {
+  margin-bottom: var(--space-xs);
+  color: var(--color-text-muted);
+}
+
+.post-content strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.post-content code {
+  background-color: var(--color-code-bg);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-size: 0.9em;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  color: var(--color-code-text);
+}
+
+.post-content pre {
+  background-color: var(--color-pre-bg);
+  padding: var(--space-md);
+  border-radius: 8px;
+  overflow-x: auto;
+  margin-bottom: var(--space-md);
+  border: 1px solid var(--color-pre-border);
+}
+
+.post-content pre code {
+  background-color: transparent;
+  padding: 0;
+  color: var(--color-text);
+}
+
+.post-content a {
+  color: var(--color-accent);
+}
+
+.post-content a:hover {
+  color: var(--color-accent-hover);
+}
