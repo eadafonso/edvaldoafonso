@@ -18,9 +18,9 @@ export default function Home() {
             <a href="https://lbc-global.com" className="accent" target="_blank">
               LBC
             </a>
-            . Tenho mais de 5 anos de experiência a criar interfaces rápidas,
-            acessíveis e com uma experiência de utilizador realmente bem
-            pensada.
+            . Tenho mais de 8 anos de experiência a criar soluções digitais
+            rápidas, acessíveis e com uma experiência de utilizador realmente
+            bem pensada.
           </p>
           <p>
             Sou fã de produtos com excelente UX e admirador do Itachi (sim, o de
